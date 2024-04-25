@@ -1,0 +1,46 @@
+.wrapperFormCont {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--grey);
+    gap: 1.5rem;
+    height: 150px;
+    justify-content: center;
+ }
+ 
+ .titleForm {
+ 
+ }
+ 
+ .titleForm p {
+     font-size: var(--medium);
+ }
+ 
+ 
+ .buttonsInputsCont {
+     display: flex;
+     gap: 1rem;
+ }
+ button {
+     width: 200px;
+     height: 40px;
+     background-color: var(--orange);
+ }
+ 
+ input {
+     width: 300px;
+     height: 40px;
+     border: 1px solid var(--grey);
+     background-color: var(--black-sec);
+     box-shadow: 0px 0px 2px 1px var(--grey);
+     padding: 1rem 2rem;
+     color: var(--white);
+ }
+ 
+ button, input {
+     border-radius: 10px;
+ }
+ 
+ button:hover {
+     cursor: pointer;
+ }
+ 
