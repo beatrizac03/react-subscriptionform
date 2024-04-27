@@ -2,29 +2,7 @@ import { useState } from 'react'
 
 import './Form.css'
 
-const participants = []
-
-function Form() {
-
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-
-    function handleNameChange (e) {
-        setName(e.target.value)
-    }
-
-    function handleEmailChange (e) {
-        setEmail(e.target.value)
-    }
-
-    function registerIntoTable() {
-        setEmail('')
-        setName('')
-
-        participants.push( {name: name, email: email})
-        console.log(participants)
-    }
-
+function Form( {name, setName, email, setEmail, registerIntoTable} ) {
 
     return (
         <div className="wrapperFormCont">
@@ -36,13 +14,13 @@ function Form() {
                 type="text" 
                 placeholder="Nome completo" 
                 value={name}
-                onChange={handleNameChange}
+                onChange={(e) => setName(e.target.value)}
                 />
                 <input 
                 type="email" 
                 placeholder="E-mail" 
                 value={email}
-                onChange={handleEmailChange}
+                onChange={(e) => setEmail(e.target.value)}
                 />
                 <button type="submit" onClick={registerIntoTable}>REALIZAR INSCRIÇÃO</button>
             </div>
