@@ -22,7 +22,8 @@ function Table( {participantsList, setParticipantsList} ) {
                 <div className="tbodyCont w-full h-auto">
                     {participantsList.map( (each, index) => {
                         return (
-                            <div key={index} className="cont-eachparticipant w-full h-16 flex border-solid border-x-red-400 border-2">
+                            <div key={index} 
+                            className="cont-eachparticipant w-full h-16 flex border-solid border-red-400 border-2 pl-4">
                                 <div className="text-eachpartic h-full flex flex-col justify-center w-3/5">
                                     <p className="text-xl font-semibold text-indigo-400"> {each.name} </p>
                                     <p> {each.email}</p>

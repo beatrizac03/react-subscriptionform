@@ -10,17 +10,20 @@ function Form( {participantsList, setParticipantsList} ) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        setName('')
-        setEmail('')
+
     }
 
     const addParticipant = () => {
         console.log('OIIII')
     
-        if(name == "" || email == "")
-
-        setParticipantsList( oldList => { return [...oldList, {name: name, email: email}] } )
-        
+        if(name == "" || email == "") {
+            setMsgWarning('Preencha todos os campos!')
+        } else {
+            setName('')
+            setEmail('')
+            setMsgWarning('Registrado!')
+            setParticipantsList( oldList => { return [...oldList, {name: name, email: email}] } )
+        }
     }
 
     return (
@@ -38,7 +41,7 @@ function Form( {participantsList, setParticipantsList} ) {
                 onChange={(e) => setName(e.target.value)}
                 />
                 <input 
-                type="email" 
+                type="text" 
                 placeholder="E-mail" 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -47,8 +50,8 @@ function Form( {participantsList, setParticipantsList} ) {
                 className="text-slate-800 font-semibold"
                 >REALIZAR INSCRIÇÃO</button>
             </div>
-            <div className="warn-field">
-                <p value={msgWarning}></p>
+            <div className="warn-field w-full h-6">
+                <p>{msgWarning}</p>
             </div> 
         </form>
     )
