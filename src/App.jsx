@@ -12,8 +12,6 @@ function App() {
   const [email, setEmail] = useState('')
 
   function registerIntoTable() {
-      setEmail('')
-      setName('')
 
       participants.push( {name: name, email: email})
   }

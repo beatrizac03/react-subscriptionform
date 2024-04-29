@@ -4,8 +4,16 @@ import './Form.css'
 
 function Form( {name, setName, email, setEmail, registerIntoTable} ) {
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        setName('')
+        setEmail('')
+    }
+
     return (
-        <div className="wrapperFormCont">
+        <form 
+        onSubmit={handleSubmit}
+        className="wrapperFormCont">
             <div className="titleForm">
                 <p>Inscrição</p>
             </div>
@@ -25,7 +33,7 @@ function Form( {name, setName, email, setEmail, registerIntoTable} ) {
                 <button type="submit" onClick={registerIntoTable}>REALIZAR INSCRIÇÃO</button>
             </div>
             
-        </div>
+        </form>
     )
 }
 
