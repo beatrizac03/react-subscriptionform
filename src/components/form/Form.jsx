@@ -6,6 +6,7 @@ function Form( {participantsList, setParticipantsList} ) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [msgWarning, setMsgWarning] = useState('')
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -15,7 +16,11 @@ function Form( {participantsList, setParticipantsList} ) {
 
     const addParticipant = () => {
         console.log('OIIII')
+    
+        if(name == "" || email == "")
+
         setParticipantsList( oldList => { return [...oldList, {name: name, email: email}] } )
+        
     }
 
     return (
@@ -38,9 +43,13 @@ function Form( {participantsList, setParticipantsList} ) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type="submit" onClick={addParticipant} >REALIZAR INSCRIÇÃO</button>
+                <button type="submit" onClick={addParticipant} 
+                className="text-slate-800 font-semibold"
+                >REALIZAR INSCRIÇÃO</button>
             </div>
-            
+            <div className="warn-field">
+                <p value={msgWarning}></p>
+            </div> 
         </form>
     )
 }

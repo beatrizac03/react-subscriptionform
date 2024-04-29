@@ -27,8 +27,8 @@ function Table( {participantsList, setParticipantsList} ) {
                                     <p className="text-xl font-semibold text-indigo-400"> {each.name} </p>
                                     <p> {each.email}</p>
                                 </div>
-                                <div className="cont-subscdate flex align-center w-1/5">
-                                    <p className="w-1/2">há {Math.floor(Math.random() * 60) + 1} minutos</p>
+                                <div className="cont-subscdate flex align-center w-1/5 h-full">
+                                    <p className="h-1/2">há {Math.floor(Math.random() * 60) + 1} minutos</p>
                                 </div>
                                 <div className="cont-checkindate w-1/5">
                                     <p>Confirmar check-in</p>
