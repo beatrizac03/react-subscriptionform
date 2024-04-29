@@ -4,23 +4,14 @@ import Form from './components/form/Form'
 
 import { useState } from 'react'
 
-const participants = []
-
 function App() {
-
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-
-  function registerIntoTable() {
-
-      participants.push( {name: name, email: email})
-  }
-
+ 
+  const [participantsList, setParticipantsList] = useState( () => { return [] } )
 
   return (
     <>
-      <Form name={name} setName={setName} email={email} setEmail={setEmail} registerIntoTable={registerIntoTable}/>
-      <Table participants={participants}/>
+      <Form participantsList={participantsList} setParticipantsList={setParticipantsList}/>
+      <Table participantsList={participantsList} setParticipantsList={setParticipantsList}/>
     </>
   )
 }

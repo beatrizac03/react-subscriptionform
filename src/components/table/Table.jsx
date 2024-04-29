@@ -1,7 +1,6 @@
 import './Table.css'
 
-function Table( {participants} ) {
-    let obj = participants
+function Table( {participantsList, setParticipantsList} ) {
 
     return (
         <div className="wrapperTableCont">
@@ -19,6 +18,24 @@ function Table( {participants} ) {
                     <div className="eachHeaderTitle checkInHT">
                         <span>Data do check-in</span>
                     </div>
+                </div>
+                <div className="tbodyCont w-full h-auto">
+                    {participantsList.map( (each, index) => {
+                        return (
+                            <div key={index} className="cont-eachparticipant w-full h-16 flex border-solid border-x-red-400 border-2">
+                                <div className="text-eachpartic h-full flex flex-col justify-center w-3/5">
+                                    <p className="text-xl font-semibold text-indigo-400"> {each.name} </p>
+                                    <p> {each.email}</p>
+                                </div>
+                                <div className="cont-subscdate flex align-center w-1/5">
+                                    <p className="w-1/2">há {Math.floor(Math.random() * 60) + 1} minutos</p>
+                                </div>
+                                <div className="cont-checkindate w-1/5">
+                                    <p>Confirmar check-in</p>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>

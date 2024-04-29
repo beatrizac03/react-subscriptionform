@@ -2,12 +2,20 @@ import { useState } from 'react'
 
 import './Form.css'
 
-function Form( {name, setName, email, setEmail, registerIntoTable} ) {
+function Form( {participantsList, setParticipantsList} ) {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
 
     function handleSubmit(e) {
         e.preventDefault()
         setName('')
         setEmail('')
+    }
+
+    const addParticipant = () => {
+        console.log('OIIII')
+        setParticipantsList( oldList => { return [...oldList, {name: name, email: email}] } )
     }
 
     return (
@@ -30,7 +38,7 @@ function Form( {name, setName, email, setEmail, registerIntoTable} ) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type="submit" onClick={registerIntoTable}>REALIZAR INSCRIÇÃO</button>
+                <button type="submit" onClick={addParticipant} >REALIZAR INSCRIÇÃO</button>
             </div>
             
         </form>
