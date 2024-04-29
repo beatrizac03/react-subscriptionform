@@ -2,11 +2,6 @@ import './Table.css'
 
 function Table( {participants} ) {
     let obj = participants
-    obj.forEach(obj => {
-        let each = document.createElement('div')
-        each.innerHTML = `${obj.name} + ${obj.email}`
-        console.log(each)
-    })
 
     return (
         <div className="wrapperTableCont">
