@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 import './Table.css'
+import Search from '../search/Search';
+
 
 // eslint-disable-next-line react/prop-types
 function Table( { participantsList, setParticipantsList } ) {
@@ -11,12 +13,12 @@ function Table( { participantsList, setParticipantsList } ) {
     function confirmCheckIn(each) {
         const updatedParticipantsList = participantsList.map(participant => {
             if (participant.id === each.id) {
-                return { ...participant, isCheckedIn: true };
+                return { ...participant, isCheckedIn: true }
             }
-            return participant;
+            return participant
         });
 
-        setParticipantsList(updatedParticipantsList);
+        setParticipantsList(updatedParticipantsList)
     }
 
     return (
@@ -24,6 +26,9 @@ function Table( { participantsList, setParticipantsList } ) {
             <div className="titleTable">
                 <p>Participantes</p>
             </div>
+
+            <Search />
+
             <div className="contTHeadTbody">
                 <div className="headerTHead">
                     <div className="eachHeaderTitle participantHT">
@@ -37,7 +42,7 @@ function Table( { participantsList, setParticipantsList } ) {
                     </div>
                 </div>
                 <div className="tbodyCont w-full h-auto">
-                    {participantsList.map( (each) => {
+                {participantsList.map( (each) => {
                         return (
                             <div key={each.id} 
                             className="cont-eachparticipant w-full h-16 flex border-solid pl-4 border-neutral-500 border-b-2 border-r-2 border-l-2">
@@ -49,11 +54,12 @@ function Table( { participantsList, setParticipantsList } ) {
                                     <p className="h-1/2">há {Math.floor(Math.random() * 60) + 1} minutos</p>
                                 </div>
                                 <div className="cont-checkindate w-1/5">
-                                    <span value={confirmCheckInSpan} onClick={ () => confirmCheckIn(each)}>{each.isCheckedIn ? 'Confirmado' : 'Confirmar check-in'}</span>
+                                    <span value={confirmCheckInSpan} onClick={ () => confirmCheckIn(each)}>{each.isCheckedIn ? 'Confirmado!' : 'Confirmar check-in'}</span>
                                 </div>
                             </div>
                         )
                     })}
+                    
                 </div>
             </div>
         </div>
