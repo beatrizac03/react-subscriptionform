@@ -5,7 +5,7 @@ import Search from '../search/Search';
 
 
 // eslint-disable-next-line react/prop-types
-function Table( { participantsList, setParticipantsList } ) {
+function Table( { participantsList, setParticipantsList, search } ) {
 
     // eslint-disable-next-line no-unused-vars
     const [confirmCheckInSpan, setConfirmCheckInSpan] = useState('Confirmar check-in')
@@ -42,7 +42,8 @@ function Table( { participantsList, setParticipantsList } ) {
                     </div>
                 </div>
                 <div className="tbodyCont w-full h-auto">
-                {participantsList.map( (each) => {
+                {participantsList
+                .map( (each) => {
                         return (
                             <div key={each.id} 
                             className="cont-eachparticipant w-full h-16 flex border-solid pl-4 border-neutral-500 border-b-2 border-r-2 border-l-2">
@@ -58,7 +59,9 @@ function Table( { participantsList, setParticipantsList } ) {
                                 </div>
                             </div>
                         )
-                    })}
+                    })
+                    .filter( (each) => each.name.toLowerCase().includes(search.toLowerCase()))
+                    }
                     
                 </div>
             </div>
