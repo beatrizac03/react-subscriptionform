@@ -8,7 +8,6 @@ Formulário que simula a inscrição de um participante em um evento, com nome e
 
 ## Funcionalidades
 - Realizar inscrição com nome e e-mail.
-- Confirmar a inscrição.
 - Mecanismo de busca pelos dados enviados.
 - Confirmar check-in.
 - Geração de uma data de inscrição aleatória com `Math.random()`
@@ -20,3 +19,25 @@ Para executar este projeto localmente, você precisará ter o Node.js e o npm in
 ## Como Executar
 
 1. Clone este repositório:
+```bash
+git clone https://github.com/beatrizac03/react-subscriptionform.git
+```
+
+2. Acesse o diretório do projeto:
+```bash
+cd react-subscriptionform
+```
+
+3. Instale as dependências:
+```bash
+npm install
+# ou
+yarn
+```
+
+4. Execute a aplicação para iniciar o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+```
