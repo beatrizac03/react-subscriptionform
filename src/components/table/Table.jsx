@@ -44,6 +44,15 @@ function Table( { participantsList, setParticipantsList } ) {
                     </div>
                 </div>
                 <div className="tbodyCont w-full h-auto">
+                {search && 
+                    participantsList
+                        .filter((each) => 
+                            each.name.toLowerCase().includes(search.toLowerCase()) || 
+                            each.email.toLowerCase().includes(search.toLowerCase())
+                        )
+                        .length === 0 && 
+                    <p>0 resultados encontrados para "{search}"</p>
+                }
                 {participantsList
                 .filter( (each) => each.name.toLowerCase().includes(search.toLowerCase()) || 
                 each.email.toLowerCase().includes(search.toLowerCase()) )
