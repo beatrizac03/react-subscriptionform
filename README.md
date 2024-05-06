@@ -1,8 +1,22 @@
-# React + Vite
+# Formulário de Inscrição | Subscription Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Formulário que simula a inscrição de um participante em um evento, com nome e email
 
-Currently, two official plugins are available:
+## Tecnologias
+- Vite + React JS
+- Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+- Realizar inscrição com nome e e-mail.
+- Confirmar a inscrição.
+- Mecanismo de busca pelos dados enviados.
+- Confirmar check-in.
+- Geração de uma data de inscrição aleatória com `Math.random()`
+
+## Pré-requisitos
+
+Para executar este projeto localmente, você precisará ter o Node.js e o npm instalados em sua máquina.
+
+## Como Executar
+
+1. Clone este repositório:
