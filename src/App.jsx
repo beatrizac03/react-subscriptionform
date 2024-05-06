@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Form participantsList={participantsList} setParticipantsList={setParticipantsList}/>
-      <Table participantsList={participantsList} setParticipantsList={setParticipantsList}/>
+      <Table participantsList={participantsList} setParticipantsList={setParticipantsList} />
     </>
   )
 }

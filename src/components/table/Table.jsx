@@ -5,10 +5,12 @@ import Search from '../search/Search';
 
 
 // eslint-disable-next-line react/prop-types
-function Table( { participantsList, setParticipantsList, search } ) {
+function Table( { participantsList, setParticipantsList } ) {
 
     // eslint-disable-next-line no-unused-vars
     const [confirmCheckInSpan, setConfirmCheckInSpan] = useState('Confirmar check-in')
+
+    const [search, setSearch] = useState('')
 
     function confirmCheckIn(each) {
         const updatedParticipantsList = participantsList.map(participant => {
@@ -27,7 +29,7 @@ function Table( { participantsList, setParticipantsList, search } ) {
                 <p>Participantes</p>
             </div>
 
-            <Search />
+            <Search search={search} setSearch={setSearch} />
 
             <div className="contTHeadTbody">
                 <div className="headerTHead">
@@ -43,6 +45,8 @@ function Table( { participantsList, setParticipantsList, search } ) {
                 </div>
                 <div className="tbodyCont w-full h-auto">
                 {participantsList
+                .filter( (each) => each.name.toLowerCase().includes(search.toLowerCase()) || 
+                each.email.toLowerCase().includes(search.toLowerCase()) )
                 .map( (each) => {
                         return (
                             <div key={each.id} 
@@ -60,8 +64,7 @@ function Table( { participantsList, setParticipantsList, search } ) {
                             </div>
                         )
                     })
-                    .filter( (each) => each.name.toLowerCase().includes(search.toLowerCase()))
-                    }
+                }
                     
                 </div>
             </div>
