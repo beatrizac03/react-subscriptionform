@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import './Form.css'
 
@@ -8,6 +8,14 @@ function Form( {participantsList, setParticipantsList} ) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [msgWarning, setMsgWarning] = useState('')
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setMsgWarning('');
+        }, 2000); // 3000 milissegundos = 3 segundos
+
+        return () => clearTimeout(timer);
+    }, [msgWarning])
 
     const addParticipant = (e) => {
         e.preventDefault()
