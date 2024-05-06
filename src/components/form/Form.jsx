@@ -10,8 +10,6 @@ function Form( {participantsList, setParticipantsList} ) {
 
     const addParticipant = (e) => {
         e.preventDefault()
-
-        console.log('OIIII')
     
         if(name == "" || email == "") {
             setMsgWarning('Preencha todos os campos!')
