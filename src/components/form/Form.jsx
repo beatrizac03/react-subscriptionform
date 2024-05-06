@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import './Form.css'
 
+// eslint-disable-next-line react/prop-types, no-unused-vars
 function Form( {participantsList, setParticipantsList} ) {
 
     const [name, setName] = useState('')
@@ -17,7 +18,9 @@ function Form( {participantsList, setParticipantsList} ) {
             setName('')
             setEmail('')
             setMsgWarning('Registrado!')
-            setParticipantsList( oldList => { return [...oldList, {name: name, email: email}] } )
+            setParticipantsList( oldList => { 
+                return [...oldList, {id: Math.floor(Math.random() * 10000), name: name, email: email, isConfirmed: false}] 
+            } )
         }
     }
 
